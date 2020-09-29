@@ -8,7 +8,7 @@
 NCRL_LIO is a package aimed to solve SLAM problem in real time with lidar-inertial system.
 ## Result
 #### Indoor Experiment
-[![Indoor Result](https://img.youtube.com/vi/X2338T96Tz8/0.jpg)](http://www.youtube.com/watch?v=X2338T96Tz8)
+[![Indoor Result](https://img.youtube.com/vi/r3dRgie8Ggc/0.jpg)](http://www.youtube.com/watch?v=r3dRgie8Ggc)
 
 #### KITTI Dataset
 [![KITTI Result](https://img.youtube.com/vi/B24UWVwRyC8/0.jpg)](http://www.youtube.com/watch?v=B24UWVwRyC8)
@@ -20,7 +20,7 @@ NCRL_LIO is a package aimed to solve SLAM problem in real time with lidar-inerti
 
 ## Build NCRL_LIO
 1. `$ cd [workspace]/src`
-2. `$ git clone https://chunjonglin@bitbucket.org/chunjonglin/ncrl_lio.git`
+2. `$ git clone https://github.com/ChadLin9596/ncrl_lio.git`
 3. `$ catkin_make`
 4. `$ source [workspace]/devel/setup.bash` or
 `$ source [workspace]/devel/setup.zsh`
