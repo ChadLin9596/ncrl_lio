@@ -6,8 +6,15 @@
 * Yin-Long Yan - yanlong658.gdr08g@nctu.edu.tw
 * Bing-Yuan You - physical31031.c@nycu.edu.tw
 
-## Preamble
-NCRL_LIO is a package aimed to solve SLAM problem in real time with lidar-inertial system.
+A real-time LiDAR inertial odometer system (RTLIO) is developed to achieve high-precision and high-frequency odometry
+and mapping for feedback control of UAVs. In contrast to the traditional LIO approach, the initialization process in this work
+can be performed even when the device is stationary. The developed RTLIO can generate LiDAR-inertial odometery by solving
+cost functions that consist of the LiDAR and IMU residuals. Loop closure and pose-graph optimization are also developed in
+RTLIO to further reduce the accumulated pose errors. To demonstrate real-time feedback control of UAVs, RTLIO is applied
+to provide high frequency pose feedback for controlling an unmanned aerial vehicle (UAV). After long-range experiments,
+RTLIO can outperform LIO with a smaller drift. Experiments with publicly available dataset (i.e., KITTI1
+) are also conducted
+to demonstrate the efficacy of the algorithm in both accuracy and frequency.
 
 ## Result
 #### Indoor Experiment
@@ -21,14 +28,14 @@ NCRL_LIO is a package aimed to solve SLAM problem in real time with lidar-inerti
 2. Ceres Solver [CERES INSTALLATION](http://ceres-solver.org/installation.html)
 3. PCL [PCL INSTALLATION](https://pointclouds.org/downloads/)
 
-## Build ==NCRL_LIO==
+## Build NCRL_LIO
 1. `$ cd [workspace]/src`
 2. `$ git clone https://chunjonglin@bitbucket.org/chunjonglin/ncrl_lio.git`
 3. `$ catkin_make`
 4. `$ source [workspace]/devel/setup.bash` or
 `$ source [workspace]/devel/setup.zsh`
 
-## Run ==NCRL_LIO==
+## Run NCRL_LIO
 #### operate with VLP-16
 1. modify the parameters in `ncrl_lio/config/[filename.yaml]`
 2. `roslaunch ncrl_lio run.launch`
