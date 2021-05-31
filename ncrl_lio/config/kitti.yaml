@@ -1,0 +1,70 @@
+%YAML:1.0
+
+#common parameters
+imu_topic: "/imu/data"
+lidar_topic: "/velodyne_points"  # currently modified in launch files
+output_path: "/home/ncrl/"
+
+#enable function
+enable_F2M_PLANE: 1
+enable_F2M_EDGE: 1
+enable_F2F_PLANE: 1
+enable_F2F_EDGE: 0
+enable_MARGINALIZATION: 1
+enable_OPT_EXTRINSIC: 0
+enable_PRIOR_FACTOR: 0
+#HIGHSPEED_INITIALIZATION is enable in sequence of 01, 02, 04, 05, 06, 09 in KITTI Dataset
+enable_HIGHSPEED_INITIALIZATION: 0
+enable_REMOVE_BACKGROUND: 1
+
+#optimization parameters
+max_solver_time: 0.1  # max solver itration time (ms), to guarantee real time
+max_num_iterations: 10   # max solver itrations, to guarantee real time
+
+# window size for initialization
+INITIAL_STRUCTURE_SIZE: 10
+
+#extrinsic from imu to lidar, rotation(degree) translation(m)
+EI2L_RX: -0.8494166
+EI2L_RY: 0.11599
+EI2L_RZ: 0.0450004
+EI2L_TX: 0.810543937759
+EI2L_TY: -0.307054365728
+EI2L_TZ: 0.802724026418
+
+#imu parameters       The more accurate parameters you provide, the better performance
+acc_n: 0.2          # accelerometer measurement noise standard deviation. #0.2   0.04
+gyr_n: 0.02         # gyroscope measurement noise standard deviation.     #0.05  0.004
+acc_w: 0.0002         # accelerometer bias random work noise standard deviation.  #0.02
+gyr_w: 2.0e-5       # gyroscope bias random work noise standard deviation.     #4.0e-5
+g_norm: 9.805       # gravity magnitude
+
+#lidar parameters
+lineRes: 0.4
+planeRes: 0.8
+BackgroundDis: 0.2  # distance threshold for brackground extraction
+
+#loop closure parameters
+ICP_Score: 0.8  # threshold to consider a good match or not
+KeyframeDistance: 5.0  # distance threshold to consider as keyframe
+LoopSearchRadius: 10.0  # radius for kd-tree to search keyframe
+MinLoopDuration: 30.0  # minimum time duration for loop candidate
+
+# weight setting for cost function
+w_f2m_flat: 1
+w_f2m_corner: 1
+w_f2f_flat: 1
+w_f2f_corner: 1
+w_ext_tran: 1000
+w_ext_rot: 100
+
+#unsynchronization parameters
+td: 0.000                           # initial value of time offset. unit: s.
+
+#extrinsic from IMU to Gt
+EXGT_RX: 0
+EXGT_RY: 0
+EXGT_RZ: 0
+EXGT_TX: 0
+EXGT_TY: 0
+EXGT_TZ: 0

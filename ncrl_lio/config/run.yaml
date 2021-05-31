@@ -1,0 +1,70 @@
+%YAML:1.0
+
+#common parameters
+imu_topic: "/dji_sdk/imu"            # when bas is run_2020-03-06-16-33-07.bag
+# imu_topic: "/mavros/imu/data_raw"  # when bag is ncrl1_2019-08-20.bag or ncrl2_2019-08-20.bag
+lidar_topic: "/velodyne_points"      # currently modified in launch files
+output_path: "/home/ncrl/"
+
+#enable function
+enable_F2M_PLANE: 1
+enable_F2M_EDGE: 1
+enable_F2F_PLANE: 1
+enable_F2F_EDGE: 0
+enable_MARGINALIZATION: 1
+enable_OPT_EXTRINSIC: 0
+enable_PRIOR_FACTOR: 0
+enable_HIGHSPEED_INITIALIZATION: 0
+enable_REMOVE_BACKGROUND: 0
+
+#optimization parameters
+max_solver_time: 0.04  # max solver itration time (ms), to guarantee real time
+max_num_iterations: 4   # max solver itrations, to guarantee real time
+
+# window size for initialization
+INITIAL_STRUCTURE_SIZE: 10
+
+#extrinsic from imu to lidar, rotation(degree) translation(m)
+EI2L_RX: 0
+EI2L_RY: 0
+EI2L_RZ: 0
+EI2L_TX: 0
+EI2L_TY: 0.08
+EI2L_TZ: -0.12
+
+#imu parameters       The more accurate parameters you provide, the better performance
+acc_n: 0.2          # accelerometer measurement noise standard deviation.
+gyr_n: 0.05         # gyroscope measurement noise standard deviation.
+acc_w: 0.002        # accelerometer bias random work noise standard deviation.
+gyr_w: 4.0e-5       # gyroscope bias random work noise standard deviation.
+g_norm: 9.805    # gravity magnitude
+
+#lidar parameters
+lineRes: 0.3
+planeRes: 0.6
+BackgroundDis: 0.05  # distance threshold for brackground extraction
+
+#loop closure parameters
+ICP_Score: 0.8  # threshold to consider a good match or not
+KeyframeDistance: 1.0  # distance threshold to consider as keyframe
+LoopSearchRadius: 10.0  # radius for kd-tree to search keyframe
+MinLoopDuration: 30.0  # minimum time duration for loop candidate
+
+# weight setting for cost function
+w_f2m_flat: 10
+w_f2m_corner: 5
+w_f2f_flat: 1
+w_f2f_corner: 1
+w_ext_tran: 1000
+w_ext_rot: 100
+
+#unsynchronization parameters
+td: 0.000                           # initial value of time offset. unit: s.
+
+#extrinsic from IMU to Gt
+EXGT_RX: 0
+EXGT_RY: 0
+EXGT_RZ: 0
+EXGT_TX: 0
+EXGT_TY: 0
+EXGT_TZ: 0
