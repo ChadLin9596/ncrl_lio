@@ -6,6 +6,10 @@
 * Yin-Long Yan - yanlong658.gdr08g@nctu.edu.tw
 * Bing-Yuan You - physical31031.c@nycu.edu.tw
 
+
+## [Paper](https://doi.org/10.3390/s21123955)
+
+
 A real-time LiDAR inertial odometer system (RTLIO) is developed to achieve high-precision and high-frequency odometry
 and mapping for feedback control of UAVs. In contrast to the traditional LIO approach, the initialization process in this work
 can be performed even when the device is stationary. The developed RTLIO can generate LiDAR-inertial odometery by solving
